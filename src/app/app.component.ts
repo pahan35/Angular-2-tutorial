@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
+import { IProduct } from './product';
+import { ProductService } from './products.service';
 
-@Component({
-  selector: 'demo-app',
-  templateUrl: 'app/app.component.html'
+@Component ({
+    selector: 'demo-app',
+    template: '<div>Hello</div>',
+    providers: [ProductService]
 })
-export class AppComponent  {
-    appTitle: string = 'Welcome';
-    appList: any[] = [
-        {
-            'ID': '1',
-            'Name': 'One'
-        },
-        {
-            'ID': '2',
-            'Name': 'Two'
-        }
-    ];
+
+export   class   AppComponent  {
+    iproducts: IProduct[];
+    constructor(private _product: ProductService) {
+    }
+    ngOnInit(): void {
+        this._product.getproducts()
+            .subscribe(iproducts => this.iproducts = iproducts);
+    }
 }
