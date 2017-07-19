@@ -1,19 +1,12 @@
-import { Component } from '@angular/core';
-import { IProduct } from './product';
-import { ProductService } from './products.service';
+import { Component } from '@angular/core';  
 
 @Component ({
     selector: 'demo-app',
-    template: '<div>Hello</div>',
-    providers: [ProductService]
+    template: '<ul>\n' +
+    '    <li><a [routerLink] = "[\'/Product\']">Product</a></li>\n' +
+    '    <li><a [routerLink] = "[\'/Inventory\']">Inventory</a></li>\n' +
+    '        </ul>\n' +
+    '        <router-outlet></router-outlet>' ,
 })
 
-export   class   AppComponent  {
-    iproducts: IProduct[];
-    constructor(private _product: ProductService) {
-    }
-    ngOnInit(): void {
-        this._product.getproducts()
-            .subscribe(iproducts => this.iproducts = iproducts);
-    }
-}
+export class AppComponent  { }
