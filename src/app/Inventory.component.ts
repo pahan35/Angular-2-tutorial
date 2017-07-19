@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router }  from '@angular/router';
 
 @Component ({
-    selector: 'demo-app',
+    selector: 'my-app',
     template: 'Inventory <a class = \'button\' (click) = \'onBack()\'>Back to Products</a>'
 })
 

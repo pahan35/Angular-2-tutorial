@@ -1,12 +1,8 @@
-import { Component } from '@angular/core';  
+import { Component } from '@angular/core';
 
-@Component ({
-    selector: 'demo-app',
-    template: '<ul>\n' +
-    '    <li><a [routerLink] = "[\'/Product\']">Product</a></li>\n' +
-    '    <li><a [routerLink] = "[\'/Inventory\']">Inventory</a></li>\n' +
-    '        </ul>\n' +
-    '        <router-outlet></router-outlet>' ,
+@Component({
+    selector: 'my-app',
+    template: '<product-form>l;</product-form>'
 })
 
-export class AppComponent  { }
+export class AppComponent { }
