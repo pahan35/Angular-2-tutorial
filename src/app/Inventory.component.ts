@@ -1,8 +1,15 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { Router }  from '@angular/router';
 
-@Component({
+@Component ({
     selector: 'demo-app',
-    template: 'Inventory',
+    template: 'Inventory <a class = \'button\' (click) = \'onBack()\'>Back to Products</a>'
 })
+
 export class AppInventory {
+    constructor(private _router: Router) {}
+
+    onBack(): void {
+        this._router.navigate(['/Product']);
+    }
 }
